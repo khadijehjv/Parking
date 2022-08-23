@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Parking</string>
+    <string name="price_panel">Price Panel</string>
+    <string name="arrival">arrival</string>
+    <string name="pricePanel_descriptionTx">Please enter the price for your desired hours:</string>
+    <string name="save_btn">save</string>
+    <string name="cancel_btn">cancel</string>
+    <string name="pricePanel_price_tx">Price</string>
+    <string name="hour">Hour</string>
+    <string name="Arrival">Arrival</string>
+    <string name="car_plate">Car Plate</string>
+    <string name="Date">Date</string>
+    <string name="Time">Time</string>
+    <string name="Year">Year</string>
+    <string name="Month">Month</string>
+    <string name="Day">Day</string>
+    <string name="Minute">Minute</string>
+    <string name="Exit">Exit</string>
+</resources>
