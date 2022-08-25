@@ -28,7 +28,7 @@ public class ResultActivity extends AppCompatActivity {
                 calPrice
                         (DateDifference.findDifference(
                                 parking.getArrivalDateAndTime(carPlate)
-                                ,timeStamp)));
+                                ,timeStamp))+" تومان");
 
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override

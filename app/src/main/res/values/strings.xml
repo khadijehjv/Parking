@@ -16,4 +16,5 @@
     <string name="Day">Day</string>
     <string name="Minute">Minute</string>
     <string name="Exit">Exit</string>
+    <string name="lastPage_title">Payment</string>
 </resources>
