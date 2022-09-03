@@ -3,8 +3,15 @@
 
         android:shape="rectangle">
 
-        <solid android:color="@color/white"></solid>
-        <corners android:radius="50dp"></corners>
-        <stroke android:color="@color/black" android:width="@dimen/cardview_compat_inset_shadow" android:dashGap="@dimen/cardview_compat_inset_shadow"></stroke>
+<!--        <solid android:color="@color/supplement_color"></solid>-->
+        <corners android:radius="10dp"></corners>
+        <gradient
+            android:centerColor="@color/supplement_color"
+            android:type="linear"
+            android:angle="@android:integer/config_longAnimTime"
+            android:centerX="@integer/material_motion_duration_long_1">
+        </gradient>
+
+        <stroke android:color="@color/supplement_color" android:width="@dimen/cardview_compat_inset_shadow" android:dashGap="@dimen/cardview_compat_inset_shadow"></stroke>
 
 </shape>

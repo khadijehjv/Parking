@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent=new Intent(com.example.parking.MainActivity.this,ArrivalActivity.class);
-                        startActivityForResult(intent,arrival_reqCode);
+                        startActivity(intent);
                     }
                 });
                 exit_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent=new Intent(com.example.parking.MainActivity.this,ExitActivity.class);
-                        startActivityForResult(intent,exit_reqCode);
+                        startActivity(intent);
                     }
                 });
 
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
             private void initialID(){
-                pricePanel_btn=findViewById(R.id.btn_main_pricePanel);
-                arrival_btn=findViewById(R.id.btn_main_arrival);
-                exit_btn=findViewById(R.id.btn_main_exit);
+                pricePanel_btn=findViewById(R.id.mainAct_btn_pricePanel);
+                arrival_btn=findViewById(R.id.mainAct_btn_arrival);
+                exit_btn=findViewById(R.id.mainAct_btn_exit);
                 parking=new DBHelper(this);
             }
         }

@@ -3,169 +3,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/my_color"
-        tools:context=".PricePanelActivity">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/pricepanel_image_bottomGuideline"
-            app:layout_constraintEnd_toStartOf="@+id/pricepanel_image_rightGuideline"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/pricepanel_image_leftGuideline"
-            app:layout_constraintTop_toTopOf="@+id/pricepanel_image_topGuideline"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/white_pic" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/pricepanel_image_leftGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/pricepanel_image_rightGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_color"
+    tools:context=".PricePanelActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/pricepanel_image_bottomGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.85" />
+            app:layout_constraintGuide_percent="0.73" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/pricepanel_image_topGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/pricepanel_priceTx_rightGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/hour"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/pricePanel_price_editText" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="0dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/pricePanel_price_tx"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintGuide_percent="0.31" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4" />
+            app:layout_constraintGuide_percent="0.09" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6" />
+            app:layout_constraintGuide_percent="0.7" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/pricePanel_cancel_img"-->
+        <!--            android:layout_width="40dp"-->
+        <!--            android:layout_height="46dp"-->
+        <!--            android:background="@drawable/background_cancel_button"-->
+        <!--            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"-->
+        <!--            tools:layout_editor_absoluteX="428dp"-->
+        <!--            tools:layout_editor_absoluteY="209dp" />-->
 
         <EditText
             android:id="@+id/pricePanel_price_editText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_width="321dp"
+            android:layout_height="53dp"
             android:ems="10"
+            android:hint="@string/pricePanel_price_tx"
             android:inputType="number"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            android:textColorHighlight="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/pricePanel_hour_editText"
+            app:layout_constraintEnd_toStartOf="@+id/pricePanel_hour_editText"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toTopOf="@+id/pricePanel_hour_editText" />
 
         <EditText
             android:id="@+id/pricePanel_hour_editText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_width="342dp"
+            android:layout_height="61dp"
             android:ems="10"
+            android:hint="Hours"
             android:inputType="number"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            android:textColorHighlight="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/pricePanel_save_btn"
+            app:layout_constraintEnd_toStartOf="@+id/pricePanel_save_btn"
+            app:layout_constraintStart_toEndOf="@+id/pricePanel_price_editText"
+            app:layout_constraintTop_toTopOf="@+id/pricePanel_save_btn"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/pricePanel_save_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_width="185dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="32dp"
             android:background="@drawable/background_save_button"
             android:text="@string/save_btn"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/pricepanel_image_bottomGuideline"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/pricePanel_hour_editText" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/pricePanel_hour_editText" />
 
-        <Button
-            android:id="@+id/pricePanel_cancel_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_save_button"
-            android:text="@string/cancel_btn"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/pricePanel_save_btn" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/price_panel"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toTopOf="@+id/pricepanel_image_topGuideline"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/pricepanel_priceTx_rightGuideline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/pricePanel_cancel_img"
+            android:layout_width="55dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="@string/pricePanel_descriptionTx"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="@+id/pricepanel_image_topGuideline" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_dialog" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.16328125" />
+        <!--        <Button-->
+        <!--            android:id="@+id/pricePanel_btn_priceHistory"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="56dp"-->
+        <!--            android:background="@color/purple_200"-->
+        <!--            android:text="@string/price_history"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/pricepanel_image_bottomGuideline"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.587"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/guideline8"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.389" />
+        <entry key="app/src/main/res/drawable/background_cancel_button.xml" value="0.388" />
         <entry key="app/src/main/res/drawable/background_menu.xml" value="0.389" />
         <entry key="app/src/main/res/drawable/background_save_button.xml" value="0.388" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.389" />
-        <entry key="app/src/main/res/layout/activity_arrival.xml" value="0.3890625" />
-        <entry key="app/src/main/res/layout/activity_exit.xml" value="0.37395833333333334" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3890625" />
-        <entry key="app/src/main/res/layout/activity_price_panel.xml" value="0.3890625" />
-        <entry key="app/src/main/res/layout/activity_result.xml" value="0.28957055214723926" />
+        <entry key="app/src/main/res/layout/activity_arrival.xml" value="0.4582822085889571" />
+        <entry key="app/src/main/res/layout/activity_exit.xml" value="0.78515625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.78515625" />
+        <entry key="app/src/main/res/layout/activity_price_panel.xml" value="0.392578125" />
+        <entry key="app/src/main/res/layout/activity_price_table.xml" value="0.291796875" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.392578125" />
+        <entry key="app/src/main/res/layout/price_table.xml" value="0.241796875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.389" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.215" />
       </map>
     </option>
   </component>

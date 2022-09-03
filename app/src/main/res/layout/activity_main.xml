@@ -20,16 +20,16 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/parking_design" />
 
-        <Button
+        <ImageView
             android:id="@+id/main_menu"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/background_menu"
-            android:text="menu_bar"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/main_menu_guideline"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="-179dp" />
+            app:layout_constraintVertical_bias="0.436"
+            app:srcCompat="@android:drawable/screen_background_light" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/main_menu_guideline"
@@ -59,16 +59,16 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.65" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/app_name"
-            android:textColor="@color/black"
-            android:textSize="60sp"
-            app:layout_constraintStart_toStartOf="@+id/guideline13"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView14"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="@string/app_name"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="60sp"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/guideline13"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline13"
@@ -78,41 +78,49 @@
             app:layout_constraintGuide_percent="0.15" />
 
         <Button
-            android:id="@+id/btn_main_arrival"
+            android:id="@+id/mainAct_btn_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/exit"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/mainAct_btn_pricePanel"
+            app:layout_constraintEnd_toStartOf="@+id/main_buttons_rightGuideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/main_buttons_leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/mainAct_btn_arrival"
+            android:elevation="50dp"
+            />
+        <Button
+            android:id="@+id/mainAct_btn_arrival"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/Arrival"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/btn_main_exit"
-            app:layout_constraintEnd_toStartOf="@+id/main_buttons_rightGuideline"
-            app:layout_constraintStart_toStartOf="@+id/main_buttons_leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/btn_main_pricePanel" />
-
-        <Button
-            android:id="@+id/btn_main_pricePanel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/price_panel"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/btn_main_arrival"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/mainAct_btn_exit"
             app:layout_constraintEnd_toStartOf="@+id/main_buttons_rightGuideline"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/main_buttons_leftGuideline"
             app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
         <Button
-            android:id="@+id/btn_main_exit"
+            android:id="@+id/mainAct_btn_pricePanel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/Exit"
+            android:text="@string/price_panel"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
+            android:textSize="24sp"
+            android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@+id/guideline18"
             app:layout_constraintEnd_toStartOf="@+id/main_buttons_rightGuideline"
             app:layout_constraintStart_toStartOf="@+id/main_buttons_leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/btn_main_arrival" />
+            app:layout_constraintTop_toBottomOf="@+id/mainAct_btn_exit" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline17"

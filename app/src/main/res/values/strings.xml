@@ -15,6 +15,9 @@
     <string name="Month">Month</string>
     <string name="Day">Day</string>
     <string name="Minute">Minute</string>
-    <string name="Exit">Exit</string>
+    <string name="exit">exit</string>
+    <string name="search">search</string>
     <string name="lastPage_title">Payment</string>
+    <string name="price_history">Price History</string>
+    <string name="enter_plate_hint">Enter The Plate ...</string>
 </resources>

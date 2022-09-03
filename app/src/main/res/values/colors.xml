@@ -9,5 +9,8 @@
         <color name="black">#FF000000</color>
         <color name="white">#FFFFFFFF</color>
         <color name="my_color">#C9BED2</color>
+        <color name="background_purple">#651FFF</color>
+        <color name="supplement_color">#a255ff</color>
+        <color name="cancel_stroke_color">#6f6773</color>
 
 </resources>

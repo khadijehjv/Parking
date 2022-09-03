@@ -12,7 +12,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String CREATE_TABLE_pricePanel="CREATE TABLE "+Constants.pricePanel_table+" ("+
             Constants.ID_column+" INTEGER PRIMARY KEY ,"+
             Constants.pricePanel_price_column+ " INTEGER ,"+
-            Constants.pricePanel_hour_column+ " INTEGER )";
+            Constants.pricePanel_hour_column+ " INTEGER ,"+
+            Constants.pricePanel_priceDate_column+ " TEXT )" ;
 
 
     public static final String CREATE_TABLE_ATT="CREATE TABLE "+Constants.ATT_table+" ("+
@@ -30,7 +31,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         sqLiteDatabase.execSQL(CREATE_TABLE_pricePanel);
-        sqLiteDatabase.execSQL(CREATE_TABLE_ATT);
+        //sqLiteDatabase.execSQL(CREATE_TABLE_ATT);
 
 
 
@@ -40,16 +41,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         // this method is called to check if the table exists already.
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Constants.pricePanel_table);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Constants.ATT_table);
+       // sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Constants.ATT_table);
         onCreate(sqLiteDatabase);
     }
 
-    public void insertPrice(int price,int hour){
+    public void insertPrice(int price,int hour,String priceDate){
         SQLiteDatabase database=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(Constants.pricePanel_price_column,price);
         contentValues.put(Constants.pricePanel_hour_column,hour);
-
+        contentValues.put(Constants.pricePanel_priceDate_column,priceDate);
         database.insert(Constants.pricePanel_table,null,contentValues);
         database.close();
     }
@@ -57,7 +58,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public PricePanel getPriceAndHour(){
         SQLiteDatabase database=this.getReadableDatabase();
         PricePanel pricePanel=new PricePanel();
-        String query="SELECT * FROM "+Constants.pricePanel_table;
+        String query="SELECT * FROM "+ Constants.pricePanel_table+" ORDER BY "+Constants.ID_column+" DESC LIMIT 1";
         Cursor cursor=database.rawQuery(query,null);
         if (cursor.getCount()!=0) {
             cursor.moveToFirst();
@@ -65,6 +66,11 @@ public class DBHelper extends SQLiteOpenHelper {
             pricePanel.setHour(cursor.getInt(2));
         }
         return pricePanel;
+    }
+    public void getPricePanelTable(){
+        SQLiteDatabase database=this.getReadableDatabase();
+        String query="SELECT * FROM "+Constants.pricePanel_table;
+
     }
 
 
@@ -103,7 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase database=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(Constants.ATT_ExitDateAndTime_column,dateAndTime);
-        database.update(Constants.ATT_table,contentValues,Constants.ATT_plate_column+" = ? ",
+        database.update(Constants.ATT_table,contentValues,Constants.ATT_plate_column+" = ? AND "+Constants.ATT_ExitDateAndTime_column+" is null",
                 new String[]{plate});
     }
     public void insertArrivalInfo(String plate,String dateAndTime){
@@ -117,7 +123,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public String getArrivalDateAndTime(String plate){
         String arrivalDate="";
         SQLiteDatabase database=this.getReadableDatabase();
-        String query="SELECT "+Constants.ATT_arrivalDateAndTime_column+ " FROM "+Constants.ATT_table + " where "+Constants.ATT_plate_column+" = '" +plate + "' ";
+        String query="SELECT "+Constants.ATT_arrivalDateAndTime_column+ " FROM "+Constants.ATT_table + " where "+Constants.ATT_plate_column+" = '" +plate + "' " +
+                " AND "+Constants.ATT_price_column+" is null";
 
         Cursor cursor=database.rawQuery(query,null);
         if (cursor.getCount()!=0) {
@@ -126,6 +133,27 @@ public class DBHelper extends SQLiteOpenHelper {
 
         }
         return arrivalDate;
+    }
+    public void insertPricePaid(int price,String plate){
+        SQLiteDatabase database=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(Constants.ATT_price_column,price);
+        database.update(Constants.ATT_table,contentValues,Constants.ATT_plate_column+" = ? "+" AND "+Constants.ATT_price_column+" is null",
+                new String[]{plate});
+    }
+    public boolean theCarIsIn(String plate){
+        SQLiteDatabase database=this.getReadableDatabase();
+        String query="SELECT "+Constants.ATT_ExitDateAndTime_column+ " FROM "+Constants.ATT_table + " where "+Constants.ATT_plate_column+" = '" +plate + "' "
+                +" AND "+Constants.ATT_ExitDateAndTime_column+" is null";
+
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor.getCount()!=0) {
+            cursor.moveToFirst();
+            if (cursor.getString(0)==null) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
